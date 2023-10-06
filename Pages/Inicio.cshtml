@@ -1,0 +1,27 @@
+﻿@page
+@model MyWebApp.Pages.InicioModel
+@{
+    ViewData["Title"] = "Inicio";
+    var Redirect = new InicioModel();
+}
+
+<section>
+    <div class="text-center">
+        <h1 class="display-4">BIENVENIDO</h1>
+    </div>
+    <div>
+        <button onclick="location.href = '/Enfermeria'">NOTAS DE ENFERMERÍA</button>
+    </div>
+    <div>
+        <button>ORDENAMIENTO</button>
+    </div>
+    <div>
+        <button>FACTURACIÓN</button>
+    </div>
+    <div>
+        <button>AGENDA</button>
+    </div>
+    <div>
+        <button>HISTORIA CLÍNICA</button>
+    </div>
+</section>

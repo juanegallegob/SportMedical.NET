@@ -1,0 +1,22 @@
+﻿@page
+@model MyWebApp.Pages.EnfermeriaModel
+@{
+    ViewData["Title"] = "Notas de Enfemería";
+    var Enfermeria = new EnfermeriaModel();
+    Enfermeria.getPacients();
+}
+
+<div class="text-center">
+    <h1 class="display-4">PACIENTES</h1>
+    <h1>@Enfermeria.Pacientes.Rows.Count</h1>
+    <form method="post">
+    <select name="paciente">
+        @for (int i = 0; i < @Enfermeria.Pacientes.Rows.Count; i++)
+        {
+            <option value="@Enfermeria.Pacientes.Rows[i]["Id_Ingreso"].ToString()">@Enfermeria.Pacientes.Rows[i]["Nombre"].ToString()</option>
+        }
+    </select>
+    <br />
+    <button type="submit">CARGAR NOTAS DE ENFERMERÍA</button>
+    </form>
+</div>
